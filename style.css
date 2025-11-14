@@ -1,0 +1,256 @@
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #1c1c1c, #2e2e2e);
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card container */
+.card {
+  background: linear-gradient(120deg, pink, rgb(151, 151, 221));
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 450px;
+  width: 90vw;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h3 {
+  color: #333;
+}
+
+/* Puzzle board - 4x4 grid */
+#puzzleBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 2px auto;
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+/* Each cell in the puzzle */
+.cell {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); 
+}
+
+/* Empty cell (the space) */
+.cell.empty {
+  background: linear-gradient(135deg, #ddd, #bbb);
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  box-shadow: none;
+  cursor: default;
+}
+
+/* Hover effect on cells */
+.cell:hover:not(.empty) {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Button container */
+.button-container {
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  min-width: 100px;
+}
+
+/* Button colors */
+#shuffleBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#shuffleBtn:hover {
+  background-color: #388E3C;
+}
+
+#resetBtn {
+  background-color: #2196F3;
+  color: white;
+}
+
+#resetBtn:hover {
+  background-color: #1565C0;
+}
+
+/* Message display */
+#message {
+  margin-top: 2vh;
+  font-weight: bold;
+  color: #e91e63;
+  font-size: clamp(14px, 4vw, 18px);
+}
+
+/* Moves counter */
+#movesCounter {
+  margin-top: 1vh;
+  font-weight: bold;
+  color: #333;
+  font-size: clamp(12px, 4vw, 16px);
+}
+
+/* Reference image section */
+#reference {
+  margin-top: 2vh;
+  text-align: center;
+}
+
+#referenceImg {
+  width: 120px;
+  max-width: 30vw;
+  height: auto;
+  border: 2px solid #555;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Win animation */
+@keyframes winGlow {
+  0% {
+    box-shadow: 0 0 10px 2px #00e676;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px 8px #00c853;
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 0 10px 2px #00e676;
+    transform: scale(1);
+  }
+}
+
+#puzzleBoard.win {
+  animation: winGlow 1.5s ease-in-out infinite;
+  border: 4px solid #00c853;
+}
+
+
+/* For medium screens (tablets, 1024px and below) */
+@media (max-width: 1024px) {
+  .card {
+    width: 80vmin;
+    padding: 2vmin;
+  }
+
+  #puzzleBoard {
+    width: 65vmin;
+    gap: 0.8vmin;
+  }
+
+  button {
+    font-size: 2vmin;
+    padding: 1vmin 3vmin;
+  }
+
+  #referenceImg {
+    width: 22vmin;
+  }
+
+  h1 {
+    font-size: 3.5vmin;
+  }
+}
+
+/* For small screens (mobile devices, 768px and below) */
+@media (max-width: 768px) {
+  .card {
+    width: 90vw;
+    padding: 3vmin;
+  }
+
+  #puzzleBoard {
+    width: 80vw;
+    gap: 1vmin;
+  }
+
+  h1 {
+    font-size: 5vmin;
+  }
+
+  button {
+    font-size: 3.5vmin;
+    padding: 1.2vmin 4vmin;
+  }
+
+  #referenceImg {
+    width: 30vw;
+  }
+
+  #message,
+  #movesCounter {
+    font-size: 3vmin;
+  }
+}
+
+/* Extra small devices (below 480px wide) */
+@media (max-width: 480px) {
+  .card {
+    width: 95vw;
+    padding: 4vmin;
+  }
+
+  #puzzleBoard {
+    width: 85vw;
+    gap: 1.2vmin;
+  }
+
+  h1 {
+    font-size: 6vmin;
+  }
+
+  button {
+    font-size: 4vmin;
+    padding: 1.5vmin 5vmin;
+  }
+
+  #referenceImg {
+    width: 40vw;
+  }
+}
