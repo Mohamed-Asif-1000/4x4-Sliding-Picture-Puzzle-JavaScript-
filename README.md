@@ -153,8 +153,41 @@ Once completed:
 
 You can view the live version of the website here:  
 
-👉 [https://mohamed-asif-1000.github.io/Number-Puzzle-Game-Interactive-4-4-Sliding-Puzzle/](https://mohamed-asif-1000.github.io/Number-Puzzle-Game-Interactive-4-4-Sliding-Puzzle/)
+👉 [https://mohamed-asif-1000.github.io/4x4-Sliding-Picture-Puzzle-JavaScript-/](https://mohamed-asif-1000.github.io/4x4-Sliding-Picture-Puzzle-JavaScript-/)
 
 ---
 
+## 📱 Responsive Design
+
+- **🖥️ Desktop**: Proper tile spacing & large clickable area.
+- **📱 Mobile/Tablet**: Tiles scale automatically using CSS vmin, vw, and grid responsiveness.
+- Buttons and text auto-resize for visibility on small screens.
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+🙏 Acknowledgements
+
+Special thanks to:
+
+- The simplicity and power of HTML, CSS, and JavaScript
+- Inspiration from classic sliding puzzle games across Youtube and other Platforms
+- Front-end development techniques including DOM manipulation & responsive layout design
+
+---
+
+## 👤 Author
+
+**Mohamed Asif.A**  
+💼 Front-End Developer  
+🔗 [GitHub Profile](https://github.com/Mohamed-Asif-1000)  
+🔗 [LinkedIn](https://www.linkedin.com/in/mohamed-asif-a-14162326atm)
+
+⭐ *If you like this project, consider giving it a star on GitHub!*
 
